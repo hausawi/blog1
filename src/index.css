@@ -1,0 +1,51 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Prata&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Prata&display=swap'); */
+@import 'tailwindcss';
+* {
+	font-family: 'Tajawal', sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+/* .tajawal-extrabold {
+  font-family: "Tajawal", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+} */
+
+body {
+	background-color: #e6e6ff;
+	width: 100vw;
+	overflow: scroll;
+	font-family: 'Tajawal', sans-serif;
+	height: 100%;
+}
+
+a.active hr {
+	display: block;
+}
+select,
+input,
+textarea {
+	border: 1px solid #c2c2c2;
+	outline-color: #5baeb7;
+	border-radius: 4px;
+}
+
+.ql-container{
+	border: none !important;
+
+}
+.ql-toolbar{
+	border: none !important;
+
+}
+.ql-editor{
+	border: none !important;
+
+}
+
+
+.animatedButton {
+	animation-duration: 10000ms;
+}
