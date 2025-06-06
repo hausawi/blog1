@@ -4,7 +4,6 @@ import {
 	createBrowserRouter,
 	RouterProvider,
 } from 'react-router-dom';
-import Homepage from './routes/Homepage.jsx';
 import PostListPage from './routes/PostListPage.jsx';
 import WritePage from './routes/WritePage.jsx';
 import LoginPage from './routes/LoginPage.jsx';
@@ -15,6 +14,7 @@ import { StrictMode } from 'react';
 import { ClerkProvider } from '@clerk/clerk-react';
 import AboutPage from './routes/AboutPage.jsx';
 import PostContextProvider from './context/PostContext.jsx';
+import HomePage from './routes/HomePage.jsx';
 
 // Import your Publishable Key
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
@@ -29,7 +29,7 @@ const router = createBrowserRouter([
 		children: [
 			{
 				path: '/',
-				element: <Homepage />,
+				element: <HomePage />,
 			},
 			{
 				path: '/posts',
