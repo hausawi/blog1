@@ -8,7 +8,6 @@ import { PostContext } from '../context/PostContext';
 
 const SinglePostPage = () => {
 	const { postId } = useParams()
-	console.log(postId)
 	const { posts } = useContext(PostContext);
 	const [postData, setPostData] = useState([]);
 

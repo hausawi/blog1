@@ -17,7 +17,7 @@ const Navbar = () => {
 					height='40'
 					alt='logo'
 				/>
-				<span>HCCCS'</span>
+				<span>HCCCS</span>
 			</Link>
 			{/* MOBILE MENU */}
 			<div className='md:hidden '>

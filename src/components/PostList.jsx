@@ -10,7 +10,7 @@ const PostList = () => {
 	}, []);
 	return (
 		<div className='flex flex-col gap-12 mb-8 '>
-			{recentPosts && recentPosts.map((item, index) => (
+			{ recentPosts.map((item, index) => (
 				<PostListItem
 					key={index}
 					id={item._id}

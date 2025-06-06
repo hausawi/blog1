@@ -15,9 +15,9 @@ const FeaturePosts = () => {
 	return (
 		<div className='mt-8 mb-4 flex flex-col lg:flex-row gap-8'>
 			{featuredPost.map((item, index1) => (
-				<>
+				<div key={index1}>
 					{/* First */}
-					<div key={index1}  className='w-full lg:w-1/2 flex flex-col gap-4'>
+					<div className='w-full lg:w-1/2 flex flex-col gap-4'>
 						{/* image */}
 						<img src={item.img} className='rounded-3xl object-cover w-895' />
 						{/* details */}
@@ -31,15 +31,15 @@ const FeaturePosts = () => {
 							{item.title}
 						</Link>
 					</div>
-				</>
+				</div>
 			))}
 
 			{/* Others */}
 			<div className='w-full lg:w-1/2 flex flex-col gap-4'>
 				{subFeaturedPost.map((item, index) => (
-					<>
+					<div key={index}>
 						{/* second */}
-						<div key={index} className=' lg:h-1/3 flex juctify-between gap-4'>
+						<div className=' lg:h-1/3 flex juctify-between gap-4'>
 							<div className='w-1/3 aspect-video'>
 								<img
 									src={item.img}
@@ -64,7 +64,7 @@ const FeaturePosts = () => {
 								</Link>
 							</div>
 						</div>
-					</>
+					</div>
 				))}
 			</div>
 		</div>

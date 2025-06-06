@@ -13,7 +13,7 @@ const PostListItem = () => {
 	return (
 		<div className=' lg:flex-col flex-col flex xl:flex-col gap-8'>
 			{/* details */}
-			{postItem &&
+			{
 				postItem.map((item, index) => (
 					<div key={index}>
 						<Link to={`/posts/:postId`} className=' xl:block xl:w-full'>
