@@ -11,7 +11,7 @@ const HomePage = () => {
 		<div className='mt-4 flex flex-col gap-4 '>
 			{/* BREADCRUMB */}
 			<div className='flex gap-4'>
-				<Link to='/'>الرئيسية</Link>
+				<Link to={`/`}>الرئيسية</Link>
 				<span>◉</span>
 				<span className='text-blue-800'>المقالات والمـنشورات</span>
 			</div>
@@ -22,10 +22,10 @@ const HomePage = () => {
 					<h1 className='  text-gray-800 text-xl md:text-2xl lg:text-6xl font-bold'>
 						المجلس المركزي لتنسيقية الهوسا بالسودان |
 					</h1>
-					<h1 className=' justify-end items-start pr-80 text-gray-800 text-xl md:text-xl lg:text-2xl font-bold'>
+					<h1 className=' justify-end lg:items-center items-center lg:pr-80 text-gray-800 text-xl md:text-xl lg:text-2xl font-bold'>
 						Hausa Co-ordination Central Council in Sudan
 					</h1>
-					<p className='mt-8 text-sm md:text-md text-justify'>
+					<p className='mt-8 text-sm sm:text-xs text-justify'>
 						للتأريخ عن شعوب أمة بعينها، هناك عدة محاور مهمة يجب أخذها في
 						الاعتبار لضمان تقديم صورة دقيقة وشاملة لتاريخهم. يجب البحث عن أصول
 						الشعب وتاريخهم المبكر، بما في ذلك هجراتهم، واستيطانهم، وتطورهم
@@ -35,7 +35,7 @@ const HomePage = () => {
 					</p>
 				</div>
 				{/* animated button */}
-				<Link to='/' className=' relative hidden md:block'>
+				<Link to={`/`} className=' relative hidden md:block'>
 					<svg
 						width='180'
 						height='180'

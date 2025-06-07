@@ -1,61 +1,50 @@
 import { Image } from '@imagekit/react';
 import React, { useContext, useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams} from 'react-router-dom';
 import PostMenuAction from '../components/PostMenuAction';
 import Search from '../components/Search';
 import Comments from '../components/Comments';
 import { PostContext } from '../context/PostContext';
 
 const SinglePostPage = () => {
-	const { postId } = useParams()
+	const { postId } = useParams();
+	console.log(postId)
 	const { posts } = useContext(PostContext);
-	const [postData, setPostData] = useState([]);
+	const [postData, setPostData] = useState(false);
 
 	const fetchPostData = async () => {
-		
 		posts.map((item) => {
 			if (item._id === postId) {
-				setPostData(item)
-				console.log(item)
+				setPostData(item);
+				return null;
 			}
-		})
-	}
+		});
+	};
 	useEffect(() => {
-		setPostData(posts.slice(-1));
-	}, [postId]);
+		fetchPostData();
+	}, [postId, posts]);
 
-	return (
+	return postData ? (
 		<div className='flex flex-col gap-8'>
 			{/* details */}
 			<div className='flex gap-8'>
 				<div className='lg:w-3/5 flex flex-col gap-8'>
-					{postData.map((item, index) => (
-						<div key={index}>
-							<h1 className='text-xl md:text-3xl xl:text-4xl 2xl:text-5xl font-semibold'>
-								{item.desc}
-							</h1>
-							<div className='flex items-center gap-2 text-gray-400 text-sm'>
-								<span>نشر بواسطة</span>
-								<Link>{item.author}</Link>
-								<span>في</span>
-								<Link>{item.category}</Link>
-								<span>{item.date}</span>
-							</div>
-							<p className='text-gray-500 font-medium'>{item.desc}</p>
+					<div>
+						<h1 className='text-xl md:text-3xl xl:text-4xl 2xl:text-5xl font-semibold'>
+							{postData.desc}
+						</h1>
+						<div className='flex items-center gap-2 text-gray-400 text-sm'>
+							<span>نشر بواسطة</span>
+							<Link>{postData.author}</Link>
+							<span>في</span>
+							<Link>{postData.category}</Link>
+							<span>{postData.date}</span>
 						</div>
-					))}
+						<p className='text-gray-500 font-medium'>{postData.desc}</p>
+					</div>
 				</div>
 				<div className='hidden lg:block w-2/5'>
-					{postData.map((item, index) => (
-						<div key={index}>
-							<img
-								key={index}
-								width='600'
-								className='rounded-2xl'
-								src={item.img}
-							/>
-						</div>
-					))}
+					<img width='600' className='rounded-2xl' src={postData.img} />
 				</div>
 			</div>
 			{/* content */}
@@ -63,23 +52,16 @@ const SinglePostPage = () => {
 				{/* text */}
 
 				<div className='lg:text-lg flex flex-col gap-6 text-justify'>
-					{postData.map((item, index) => (
-						<div key={index}>
-							<div className='w-full lg:hidden'>
-								<img
-									
-									width='600'
-									className='rounded-2xl'
-									src={item.img}
-								/>
-							</div>
-							<p>{item.content}</p>
+					<div>
+						<div className='w-full lg:hidden'>
+							<img width='600' className='rounded-2xl' src={postData.img} />
 						</div>
-					))}
+						<p>{postData.content}</p>
+					</div>
 				</div>
 				{/* menu */}
 				<div className='px-4 h-max sticky top-8'>
-					<h1 className=' mb-4 text-sm font-medium'> الكاتب</h1>
+					<h1 className=' mb-4 text-sm font-medium'> الناشــر</h1>
 					<div className='flex flex-col gap-4'>
 						<div className='flex items-center gap-8 '>
 							<Image
@@ -130,26 +112,26 @@ const SinglePostPage = () => {
 						<Link className='underline' to='/posts'>
 							كافة الموضوعات
 						</Link>
-						<Link className='underline' to='/posts?cat=origins'>
+						<Link className='underline' to={`/posts?cat=origins`}>
 							{' '}
 							الاصول والتاريخ
 						</Link>
 
-						<Link className='underline' to='/posts?cat=religen'>
+						<Link className='underline' to={`/posts?cat=religen`}>
 							{' '}
 							الدين والفكر
 						</Link>
 
-						<Link className='underline' to='/posts?cat=economy'>
+						<Link className='underline' to={`/posts?cat=economy`}>
 							{' '}
 							الاقتصاد والتجارة
 						</Link>
 
-						<Link className='underline' to='/posts?cat=culture'>
+						<Link className='underline' to={`/posts?cat=culture`}>
 							{' '}
 							الثقافة والتقاليد
 						</Link>
-						<Link className='underline' to='/posts?cat=modern-history'>
+						<Link className='underline' to={`/posts?cat=modern-history`}>
 							{' '}
 							التاريح الحديث
 						</Link>
@@ -160,6 +142,8 @@ const SinglePostPage = () => {
 			</div>
 			<Comments />
 		</div>
+	) : (
+		<div className='opacity-0'></div>
 	);
 };
 
