@@ -56,7 +56,7 @@ const SinglePostPage = () => {
 						<div className='w-full lg:hidden'>
 							<img width='600' className='rounded-2xl' src={postData.img} />
 						</div>
-						<p>{postData.content}</p>
+						<p className=''>{postData.content}</p>
 					</div>
 				</div>
 				{/* menu */}

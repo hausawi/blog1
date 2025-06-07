@@ -7,6 +7,8 @@ import WritePage from './routes/WritePage';
 import LoginPage from './routes/LoginPage';
 import RegisterPage from './routes/RegisterPage';
 import AboutPage from './routes/AboutPage';
+import VideoListPage from './routes/VideoListPage';
+
 
 function App() {
 	return (
@@ -16,6 +18,7 @@ function App() {
 			<Routes>
 				<Route exact path='/' element={<HomePage />} />
 				<Route path='/posts' element={<PostListPage />} />
+				<Route path='/videos' element={<VideoListPage />} />
 				<Route path='/post/:postId' element={<SinglePostPage />} />
 				<Route path='/write' element={<WritePage />} />
 				<Route path='/login' element={<LoginPage />} />

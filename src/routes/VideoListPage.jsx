@@ -1,12 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react';
-import PostListItem from '../components/PostListItem';
+import React, { useContext, useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom';
 import { PostContext } from '../context/PostContext';
 import Search from '../components/Search';
-import { Link, useParams } from 'react-router-dom';
+import PostListItem from '../components/PostListItem';
 
-
-const PostListPage = () => {
-	const {postId} = useParams()
+const VideoListPage = () => {
+	const { postId } = useParams();
 	const [open, setOpen] = useState(false);
 	const { posts } = useContext(PostContext);
 	const [filterPosts, setFilterPost] = useState([]);
@@ -45,8 +44,7 @@ const PostListPage = () => {
 	useEffect(() => {
 		applyFilter();
 	}, [category, menu]);
-
-	return (
+  return (
 		<div className='flex flex-col md:flex-row gap-12 '>
 			<div className='lg:w-3/5 flex flex-col gap-8'>
 				<button
@@ -56,7 +54,7 @@ const PostListPage = () => {
 				</button>
 			</div>
 
-			<div className='px-4 h-max  xl:sticky top-8 sm:z-0 md:z-0'>
+			<div className='px-4 h-max lg:sticky md:sticky  xl:sticky top-8 sm:z-0 md:z-0'>
 				<div className={`${open ? 'block' : 'hidden'} md:block`}>
 					<h1 className='mb-4 text-sm font-medium '>بحث</h1>
 					<Search />
@@ -167,6 +165,6 @@ const PostListPage = () => {
 			</div>
 		</div>
 	);
-};
+}
 
-export default PostListPage;
+export default VideoListPage

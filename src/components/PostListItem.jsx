@@ -15,13 +15,11 @@ const PostListItem = () => {
 			{/* details */}
 			{postItem.map((item, index) => (
 				<div key={index}>
-					<div  className=' xl:block xl:w-full'>
+					<div className=' xl:block xl:w-full'>
 						<img className='rounded-2xl object-cover w-735' src={item.img[0]} />
 					</div>
 					<div className='flex flex-col gap-4 xl:w-full'>
-						<div  className='text-4xl font-semibold '>
-							{item.title}
-						</div>
+						<div className='text-4xl font-semibold '>{item.title}</div>
 						<div className='flex items-center gap-2 text-gray-400 text-sm'>
 							<span>نشر </span>
 							<div className='text-bold'>{item.author}</div>
@@ -29,7 +27,7 @@ const PostListItem = () => {
 							<div className='text-bold'>{item.category}</div>
 							<span>{item.date}</span>
 						</div>
-						<p className='text-justify'>{item.content}</p>
+						<p className='text-justify line-clamp-4 hover:line-clamp-none'>{item.content}</p>
 						<Link
 							to={`/post/${item._id}`}
 							className='underline text-blue-800 text-sm'>
