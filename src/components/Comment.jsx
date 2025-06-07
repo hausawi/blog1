@@ -1,6 +1,4 @@
-import { Image } from '@imagekit/react';
-import React, { useContext, useEffect, useState } from 'react';
-import { PostContext } from '../context/PostContext';
+
 import { assets } from '../assets/assets';
 
 const Comment = () => {

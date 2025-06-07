@@ -1,4 +1,4 @@
-import { Image } from '@imagekit/react';
+
 
 const Image = ({ src, className, w, h, alt }) => {
 	return (
