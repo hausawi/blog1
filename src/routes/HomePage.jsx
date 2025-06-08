@@ -3,10 +3,8 @@ import { Link } from 'react-router-dom';
 import MainCategories from '../components/MainCategories';
 import FeaturePosts from '../components/FeaturePosts';
 import PostList from '../components/PostList';
-import { PostContext } from '../context/PostContext';
 
 const HomePage = () => {
-	const { posts } = useContext(PostContext);
 	return (
 		<div className='mt-4 flex flex-col gap-4 '>
 			{/* BREADCRUMB */}

@@ -10,19 +10,19 @@ const PostList = () => {
 	}, []);
 	return (
 		<div className='flex flex-col gap-12 mb-8 '>
-			{ recentPosts.map((item, index) => (
+			{/* { recentPosts.map((item, index) => ( */}
 				<PostListItem
-					key={index}
-					id={item._id}
-					slug={item.slug}
-					img={item.img}
-					title={item.title}
-					comments={item.comments}
-					content={item.content}
-					author={item.author}
-					date={item.date}
+					// key={index}
+					// id={item._id}
+					// slug={item.slug}
+					// img={item.img}
+					// title={item.title}
+					// comments={item.comments}
+					// content={item.content}
+					// author={item.author}
+					// date={item.date}
 				/>
-			))}
+			{/* ))} */}
 		</div>
 	);
 };

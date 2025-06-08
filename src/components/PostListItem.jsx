@@ -27,7 +27,9 @@ const PostListItem = () => {
 							<div className='text-bold'>{item.category}</div>
 							<span>{item.date}</span>
 						</div>
-						<p className='text-justify line-clamp-4 hover:line-clamp-none'>{item.content}</p>
+						<p className='text-justify line-clamp-4 hover:line-clamp-none'>
+							{item.content}
+						</p>
 						<Link
 							to={`/post/${item._id}`}
 							className='underline text-blue-800 text-sm'>

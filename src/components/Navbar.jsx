@@ -43,7 +43,7 @@ const Navbar = () => {
 					<NavLink onClick={() => setOpen(false)} to={`/about`}>
 						نبذة عنا
 					</NavLink>
-					<Link to={`/login`}>
+					<Link onClick={() => setOpen(false)} to={`/login`}>
 						<button className='py-2 px-4 rounded-3xl bg-blue-800 text-white'>
 							تسجيل الدخول
 						</button>

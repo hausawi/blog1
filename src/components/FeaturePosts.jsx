@@ -8,7 +8,7 @@ const FeaturePosts = () => {
 	const [subFeaturedPost, setSubFeaturedPost] = useState([]);
 
 	useEffect(() => {
-		setFeaturedPost(posts.slice(5, 6));
+		setFeaturedPost(posts.slice(0, 1));
 		setSubFeaturedPost(posts.slice(1, 4));
 	}, []);
 	return (
@@ -25,7 +25,7 @@ const FeaturePosts = () => {
 					</div>
 					{/* title */}
 					<Link
-						className='text-xl lg:text-3xl font-semibold lg:font-bold'
+						className='text-xl lg:text-2xl line-clamp-1 font-semibold lg:font-bold'
 						to={`/posts`}>
 						{item.title}
 					</Link>
